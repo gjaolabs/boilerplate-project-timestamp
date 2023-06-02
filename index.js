@@ -1,6 +1,9 @@
 // index.js
 // where your node app starts
 
+// Use PORT provided in environment or default to 3000
+const port = process.env.PORT || 3000;
+
 // init project
 var express = require('express');
 var app = express();
@@ -53,6 +56,11 @@ app.get("/api/:timestamp", (req, res) => {
 })
 
 // listen for requests :)
-var listener = app.listen(3000, function () {
-  console.log('Your app is listening on port ' + 3000);
+// var listener = app.listen(3000, function () {
+//   console.log('Your app is listening on port ' + 3000);
+// });
+
+var listener = app.listen(port, "0.0.0.0", function () {
+  console.log('Your app is listening on port ' + port);
 });
+
